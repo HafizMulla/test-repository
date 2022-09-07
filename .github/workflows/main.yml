@@ -1,0 +1,14 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Configuration Check
+on:
+  repository_dispatch:
+    types:
+      - configuration-check
+jobs:
+  check:
+    name: Run check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo Hello
