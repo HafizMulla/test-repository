@@ -1,14 +1,13 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Configuration Check
+name: Do Something That Needs Scheduled
 on:
-  repository_dispatch:
-    types:
-      - configuration-check
+  schedule:
+    - cron:  '*/5 * * * *'
 jobs:
-  check:
-    name: Run check
+  build:
+    name: Run Some Scheduled Thing
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello
-        run: echo Hello
+      - name: Do Something
+        run: echo Doing Something...
